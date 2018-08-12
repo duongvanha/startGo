@@ -38,7 +38,7 @@ func main() {
 		-----
 		<ul>
 		{{range $index, $element := .}}
-    		<li>{{$index}} - {{ $element}} - </li>
+    		<li>{{$index}} - {{ $element}} </li>
     	{{end}}
 		</ul>
 		-----
