@@ -25,7 +25,7 @@ func bar() {
 }
 
 func main() {
-	vg.Add(3)
+	vg.Add(2)
 	go foo()
 	go bar()
 	vg.Wait()
