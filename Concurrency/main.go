@@ -9,13 +9,18 @@ import (
 
 var vg = sync.WaitGroup{}
 var total = 0
+var mutex = sync.Mutex{}
 
 func upNumber() {
 	for i := 0; i < 20; i++ {
+		// lock x until calculate done
+		mutex.Lock()
 		x := total
 		x++
+		// calculate new total ( slow )
 		time.Sleep(time.Duration(rand.Intn(30)) * time.Millisecond)
 		total = x
+		mutex.Unlock()
 	}
 	vg.Done()
 }
